@@ -1,4 +1,4 @@
-import { navLinks } from "./navLinks";
+import { navLinks } from "../../data/navLinks";
 
 type Props = {
   onNavigate: (id: string) => void;

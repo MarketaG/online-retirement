@@ -1,6 +1,7 @@
 import Navigation from "./components/navigation/Navigation";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
+import Courses from "./sections/Courses";
 
 export default function App() {
   const scrollToSection = (id: string) => {
@@ -15,6 +16,7 @@ export default function App() {
           <Hero onNavigate={scrollToSection} />
         </div>
         <About />
+        <Courses />
       </div>
     </>
   );
