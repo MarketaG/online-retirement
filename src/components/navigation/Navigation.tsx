@@ -6,7 +6,11 @@ import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 
-export default function Navigation() {
+type Props = {
+  onNavigate: (id: string) => void;
+};
+
+export default function Navigation({ onNavigate }: Props) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -41,14 +45,6 @@ export default function Navigation() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: "smooth" });
-    setIsMobileOpen(false);
-  };
-
   return (
     <>
       <NavigationWrapper
@@ -56,12 +52,12 @@ export default function Navigation() {
         topBar={
           <>
             <NavLogo
-              onClick={() => scrollToSection("home")}
+              onClick={() => onNavigate("home")}
               isOnHero={!isScrolled}
             />
 
             <NavLinks
-              onNavigate={scrollToSection}
+              onNavigate={onNavigate}
               isOnHero={!isScrolled}
               activeSection={activeSection}
             />
@@ -75,10 +71,7 @@ export default function Navigation() {
         }
         mobileMenu={
           isMobileOpen && (
-            <MobileMenu
-              onNavigate={scrollToSection}
-              activeSection={activeSection}
-            />
+            <MobileMenu onNavigate={onNavigate} activeSection={activeSection} />
           )
         }
       />
