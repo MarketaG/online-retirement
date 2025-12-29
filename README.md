@@ -21,7 +21,7 @@ The project focuses on clean component architecture, accessibility, and a user-f
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/online-retirement.git
+git clone https://github.com/MarketaG/online-retirement.git
 cd online-retirement
 npm install
 ```

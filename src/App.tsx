@@ -2,6 +2,7 @@ import Navigation from "./components/navigation/Navigation";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Courses from "./sections/Courses";
+import Pricing from "./sections/Pricing";
 
 export default function App() {
   const scrollToSection = (id: string) => {
@@ -17,6 +18,7 @@ export default function App() {
         </div>
         <About />
         <Courses />
+        <Pricing />
       </div>
     </>
   );
