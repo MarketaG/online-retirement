@@ -4,6 +4,7 @@ import About from "./sections/About";
 import Courses from "./sections/Courses";
 import Pricing from "./sections/Pricing";
 import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 export default function App() {
   const scrollToSection = (id: string) => {
@@ -21,6 +22,7 @@ export default function App() {
         <Courses />
         <Pricing />
         <Contact />
+        <Footer onNavigate={scrollToSection} />
       </div>
     </>
   );
